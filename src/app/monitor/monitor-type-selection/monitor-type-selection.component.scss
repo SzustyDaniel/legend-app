@@ -35,21 +35,21 @@
 
 .monitor {
   &-list {
-    background-color: grey;
+    background-color: $monitorListBackGround;
   }
 
   &-item {
-    color: #fff;
+    color: $monitorForeground;
     cursor: pointer;
     transition: all 0.2s;
     font-size: 1.2rem;
 
     &:hover {
-      background-color: darken(#000, 20%);
+      background-color: darken($monitorSelected, 20%);
     }
   }
 }
 
 .highlight {
-  background-color: black;
+  background-color: $monitorSelected;
 }

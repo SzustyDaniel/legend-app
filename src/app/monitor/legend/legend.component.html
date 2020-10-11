@@ -1,5 +1,5 @@
 <div *ngIf="selectedLegend$ | async as legend; else noSelectedMonitor">
-  <h1>
+  <h1 class="legend-title">
     Legend
     <span *ngIf="selectedMonitor$ | async as monitor">
       for {{ monitor.name }}</span
@@ -9,13 +9,13 @@
     <li *ngFor="let tag of legend.tags">
       <div class="tag-item-container">
         <div class="tag-color" [ngStyle]="{ backgroundColor: tag.color }"></div>
-        <h3>{{ tag.label }}</h3>
+        <h3 class="tag-label">{{ tag.label }}</h3>
       </div>
     </li>
   </ul>
 </div>
 <ng-template #noSelectedMonitor>
   <div>
-    <h3>No monitor was selected</h3>
+    <h3 class="legend-title">No monitor was selected</h3>
   </div>
 </ng-template>
