@@ -1,9 +1,25 @@
+@import "../../../assets/styles/mixins";
+@import "../../../assets/styles/variables";
+
 :host {
   padding: 1.5rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }
 
 .legend-title {
-  font-size: 2rem;
+  color: $legendTitleColor;
+  font-size: 2.5rem;
+
+  @include respond(tab-port) {
+    font-size: 2rem;
+  }
+
+  @include respond(phone) {
+    font-size: 1.5rem;
+  }
 }
 
 .tag {
@@ -18,11 +34,25 @@
   }
 
   &-color {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+
+    @include respond(tab-port) {
+      width: 20px;
+      height: 20px;
+    }
   }
 
   &-label {
+    color: $legendLabelColor;
+    font-size: 1.5rem;
+  }
+
+  @include respond(tab-port) {
     font-size: 1.3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 1rem;
   }
 }
