@@ -6,6 +6,7 @@ import { AppComponent } from "./app.component";
 import { InMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryMockDb } from "./app-mock-api";
 import { HttpClientModule } from "@angular/common/http";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

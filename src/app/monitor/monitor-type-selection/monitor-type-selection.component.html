@@ -1,9 +1,16 @@
 <ul class="monitor-types-list" *ngIf="monitors$ | async as monitorTypes">
   <li
     class="monitor-types-item"
-    *ngFor="let monitorType of monitorTypes"
-    (click)="selectMonitorType(monitorType)"
+    *ngFor="let monitorType of monitorTypes; let i = index"
+    (click)="selectMonitorType(monitorType, i)"
   >
-    <a class="monitor-types-link">{{ monitorType.name }}</a>
+    <a class="monitor-types-link">{{ monitorType.name }} </a>
+    <div class="monitor-selection" *ngIf="displayMonitorIndex === i">
+      <ul>
+        <li *ngFor="let monitor of monitorTypes[i].monitors">
+          {{ monitor.name }}
+        </li>
+      </ul>
+    </div>
   </li>
 </ul>
