@@ -1,13 +1,19 @@
 import { Component, OnInit } from "@angular/core";
+import { Monitor } from "src/app/models/monitor";
 import { MonitorType } from "src/app/models/monitor-type";
 import { MonitorService } from "../monitor.service";
-
+import {
+  faAngleDoubleDown,
+  faAngleDoubleUp,
+} from "@fortawesome/free-solid-svg-icons";
 @Component({
   selector: "app-monitor-type-selection",
   templateUrl: "./monitor-type-selection.component.html",
   styleUrls: ["./monitor-type-selection.component.scss"],
 })
 export class MonitorTypeSelectionComponent implements OnInit {
+  collapseIcon = faAngleDoubleDown;
+  returnIcon = faAngleDoubleUp;
   displayMonitorIndex: number;
 
   constructor(private monitorsService: MonitorService) {}
@@ -27,5 +33,9 @@ export class MonitorTypeSelectionComponent implements OnInit {
     } else {
       this.monitorsService.selectMonitorType(undefined);
     }
+  }
+
+  selectMonitor(monitor: Monitor) {
+    console.log(monitor.name);
   }
 }
