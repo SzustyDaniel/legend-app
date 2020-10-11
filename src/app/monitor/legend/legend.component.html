@@ -1,6 +1,11 @@
 <div *ngIf="selectedLegend$ | async as legend; else noSelectedMonitor">
-  <ul>
-    <li *ngFor="let tag of legend.tags">{{ tag.label }}</li>
+  <ul class="tag-list">
+    <li *ngFor="let tag of legend.tags">
+      <div class="tag-item-container">
+        <div class="tag-color" [ngStyle]="{ backgroundColor: tag.color }"></div>
+        <h3>{{ tag.label }}</h3>
+      </div>
+    </li>
   </ul>
 </div>
 <ng-template #noSelectedMonitor>

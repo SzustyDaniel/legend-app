@@ -1,3 +1,20 @@
 :host {
   padding: 1.5rem;
 }
+
+.tag {
+  &-list {
+    list-style: none;
+  }
+
+  &-item-container {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    gap: 1.5rem;
+  }
+
+  &-color {
+    width: 20px;
+    height: 20px;
+  }
+}
