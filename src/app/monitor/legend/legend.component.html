@@ -1,4 +1,5 @@
 <div *ngIf="selectedLegend$ | async as legend; else noSelectedMonitor">
+  <h1>Legend</h1>
   <ul class="tag-list">
     <li *ngFor="let tag of legend.tags">
       <div class="tag-item-container">

@@ -5,10 +5,12 @@
       <fa-icon [icon]="collapseIcon" size="xl"></fa-icon>
     </div>
     <div class="monitor-selection" *ngIf="displayMonitorIndex === i">
-      <ul>
+      <ul class="monitor-list">
         <li
-          *ngFor="let monitor of monitorTypes[i].monitors"
-          (click)="selectMonitor(monitor, monitorTypes[i])"
+          class="monitor-item"
+          *ngFor="let monitor of monitorTypes[i].monitors; let j = index"
+          (click)="selectMonitor(j, monitor, monitorTypes[i])"
+          [ngClass]="{ highlight: j === selectedMonitorIndex }"
         >
           {{ monitor.name }}
         </li>

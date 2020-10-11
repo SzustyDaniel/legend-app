@@ -15,6 +15,7 @@ export class MonitorTypeSelectionComponent implements OnInit {
   collapseIcon = faAngleDoubleDown;
   returnIcon = faAngleDoubleUp;
   displayMonitorIndex: number;
+  selectedMonitorIndex: number;
 
   constructor(private monitorsService: MonitorService) {}
 
@@ -22,6 +23,7 @@ export class MonitorTypeSelectionComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayMonitorIndex = -1;
+    this.selectedMonitorIndex = -1;
   }
 
   selectMonitorType(monitorType: MonitorType, index: number) {
@@ -33,10 +35,13 @@ export class MonitorTypeSelectionComponent implements OnInit {
     } else {
       this.monitorsService.selectMonitorType(undefined);
     }
+
+    this.selectedMonitorIndex = -1;
   }
 
-  selectMonitor(monitor: Monitor, monitorType: MonitorType) {
+  selectMonitor(index: number, monitor: Monitor, monitorType: MonitorType) {
     console.log(monitor.name);
+    this.selectedMonitorIndex = index;
     this.monitorsService.selectLegend(monitorType.legend);
   }
 }
