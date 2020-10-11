@@ -8,7 +8,7 @@
       <ul>
         <li
           *ngFor="let monitor of monitorTypes[i].monitors"
-          (click)="selectMonitor(monitor)"
+          (click)="selectMonitor(monitor, monitorTypes[i])"
         >
           {{ monitor.name }}
         </li>

@@ -35,7 +35,8 @@ export class MonitorTypeSelectionComponent implements OnInit {
     }
   }
 
-  selectMonitor(monitor: Monitor) {
+  selectMonitor(monitor: Monitor, monitorType: MonitorType) {
     console.log(monitor.name);
+    this.monitorsService.selectLegend(monitorType.legend);
   }
 }

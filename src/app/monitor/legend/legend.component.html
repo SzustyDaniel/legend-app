@@ -1,1 +1,10 @@
-<p>legend works!</p>
+<div *ngIf="selectedLegend$ | async as legend; else noSelectedMonitor">
+  <ul>
+    <li *ngFor="let tag of legend.tags">{{ tag.label }}</li>
+  </ul>
+</div>
+<ng-template #noSelectedMonitor>
+  <div>
+    <h3>No monitor was selected</h3>
+  </div>
+</ng-template>
