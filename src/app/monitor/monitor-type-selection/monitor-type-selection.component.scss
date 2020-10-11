@@ -1,0 +1,20 @@
+:host {
+  background-color: grey;
+  height: 100%;
+}
+
+.monitor-types {
+  &-link {
+    font-size: 1.75rem;
+  }
+
+  &-item {
+    background-color: green;
+    padding: 1.5rem;
+    border-top: 1px solid black;
+  }
+
+  &-list {
+    list-style: none;
+  }
+}

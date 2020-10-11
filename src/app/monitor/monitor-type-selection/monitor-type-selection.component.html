@@ -1,1 +1,5 @@
-<p>monitor-type-selection works!</p>
+<ul class="monitor-types-list" *ngIf="monitors$ | async as monitorTypes">
+  <li class="monitor-types-item" *ngFor="let monitorType of monitorTypes">
+    <a class="monitor-types-link">{{ monitorType.name }}</a>
+  </li>
+</ul>
