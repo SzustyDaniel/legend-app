@@ -20,6 +20,7 @@ export class MonitorService {
       map((results) => {
         // convert results from API to the application models
         return results.MonitorType.map((monitorType) => {
+          // convert legend
           const legend = results.Legends.find(
             (l) => l.Id === monitorType.LegentId
           );
@@ -29,6 +30,8 @@ export class MonitorService {
               return { label: tag.Label, color: tag.Color };
             }),
           };
+
+          // convert monitors
           const monitors: Monitor[] = [];
           results.Monitor.forEach((m) => {
             if (m.MonitorTypeId === monitorType.Id) {
@@ -40,6 +43,8 @@ export class MonitorService {
               });
             }
           });
+
+          // convert monitor type
           const convertedResponse: MonitorType = {
             id: monitorType.Id,
             name: monitorType.Name,
