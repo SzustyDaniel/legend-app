@@ -3,12 +3,25 @@
 :host {
   background-color: $monitorSelectionListBackground;
   height: 100vh;
+
+  @media (max-width: 750px) {
+    height: max-content;
+    overflow-x: auto;
+  }
 }
 
 .monitor-types {
   &-link {
     font-size: 1.75rem;
     color: $monitorSelectionForeground;
+
+    @media (max-width: 750px) {
+      font-size: 1.3rem;
+    }
+
+    @media (max-width: 450px) {
+      font-size: 1.1rem;
+    }
   }
 
   &-item {
@@ -25,17 +38,30 @@
     &:hover {
       background-color: darken($monitorSelectionBackground, 20%);
     }
+
+    @media (max-width: 750px) {
+      gap: 10px;
+      height: 100%;
+    }
   }
 
   &-list {
+    display: grid;
+    grid-auto-flow: row;
     user-select: none;
     list-style: none;
+
+    @media (max-width: 750px) {
+      grid-auto-flow: column;
+      grid-auto-columns: 1fr;
+    }
   }
 }
 
 .monitor {
   &-list {
     background-color: $monitorListBackGround;
+    list-style: none;
   }
 
   &-item {
@@ -46,6 +72,10 @@
 
     &:hover {
       background-color: darken($monitorSelected, 20%);
+    }
+
+    @media (max-width: 750px) {
+      font-size: 1rem;
     }
   }
 }

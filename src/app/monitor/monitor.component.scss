@@ -1,4 +1,9 @@
 :host {
   display: grid;
   grid-template-columns: max-content 1fr;
+
+  @media (max-width: 750px) {
+    grid-template-columns: none;
+    grid-template-rows: max-content 1fr;
+  }
 }
