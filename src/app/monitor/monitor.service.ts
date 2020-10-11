@@ -70,7 +70,7 @@ export class MonitorService {
           return convertedResponse;
         });
       }),
-      tap((r) => console.log(r))
+      tap((r) => console.log("received legend response", r))
     );
   }
 

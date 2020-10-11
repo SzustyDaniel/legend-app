@@ -27,10 +27,9 @@ export class MonitorTypeSelectionComponent implements OnInit {
   }
 
   selectMonitorType(monitorType: MonitorType, index: number) {
-    console.log(`Selected monitorType: ${monitorType.name}`);
+    console.log(`Selected monitorType name: ${monitorType.name}`);
     this.selectedMonitorTypeIndex =
       this.selectedMonitorTypeIndex === index ? -1 : index;
-    console.log(this.selectedMonitorTypeIndex);
     if (this.selectedMonitorTypeIndex > 0) {
       this.monitorsService.selectMonitorType(monitorType);
     } else {
@@ -41,7 +40,7 @@ export class MonitorTypeSelectionComponent implements OnInit {
   }
 
   selectMonitor(index: number, monitor: Monitor, monitorType: MonitorType) {
-    console.log(monitor.name);
+    console.log(`Selected monitor name: ${monitor.name}`);
     this.selectedMonitorIndex = index;
     this.monitorsService.selectMonitor(monitor);
     this.monitorsService.selectLegend(monitorType.legend);
