@@ -10,6 +10,7 @@ export class LegendComponent implements OnInit {
   constructor(private monitorService: MonitorService) {}
 
   selectedLegend$ = this.monitorService.publishLegendForMonitorAction$;
+  selectedMonitor$ = this.monitorService.monitorSelectionAction$;
 
   ngOnInit(): void {}
 }

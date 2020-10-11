@@ -19,7 +19,7 @@ export class MonitorService {
   monitorTypeSelectionAction$ = this.monitorTypeSelectionSubject.asObservable();
 
   private monitorSelectionSubject = new Subject<Monitor>();
-  monitorSelectionAction$ = this.monitorTypeSelectionSubject.asObservable();
+  monitorSelectionAction$ = this.monitorSelectionSubject.asObservable();
 
   private publishLegendForMonitorSubject = new BehaviorSubject<Legend>(
     undefined
