@@ -2,9 +2,12 @@
   <li *ngFor="let monitorType of monitorTypes; let i = index">
     <div class="monitor-types-item" (click)="selectMonitorType(monitorType, i)">
       <a class="monitor-types-link">{{ monitorType.name }} </a>
-      <fa-icon [icon]="collapseIcon" size="xl"></fa-icon>
+      <fa-icon
+        [icon]="isMonitorTypeOpen(i) ? returnIcon : collapseIcon"
+        size="xl"
+      ></fa-icon>
     </div>
-    <div class="monitor-selection" *ngIf="displayMonitorIndex === i">
+    <div class="monitor-selection" *ngIf="selectedMonitorTypeIndex === i">
       <ul class="monitor-list">
         <li
           class="monitor-item"
