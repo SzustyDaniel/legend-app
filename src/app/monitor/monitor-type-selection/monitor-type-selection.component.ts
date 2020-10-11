@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { MonitorType } from "src/app/models/monitor-type";
 import { MonitorService } from "../monitor.service";
 
 @Component({
@@ -12,4 +13,8 @@ export class MonitorTypeSelectionComponent implements OnInit {
   monitors$ = this.monitorsService.getLegendFromApi();
 
   ngOnInit(): void {}
+
+  selectMonitorType(monitorType: MonitorType) {
+    console.log(`Selected monitorType: ${monitorType.name}`);
+  }
 }
