@@ -1,6 +1,6 @@
 export interface Monitor {
-  id: 0;
+  id: number;
   name: string;
   description: string;
-  monitorTypeId: 0;
+  monitorTypeId: number;
 }

@@ -10,6 +10,6 @@ export class MonitorComponent implements OnInit {
   constructor(private monitorService: MonitorService) {}
 
   ngOnInit(): void {
-    this.monitorService.getLegendFromApi().subscribe((r) => console.log(r));
+    this.monitorService.getLegendFromApi().subscribe();
   }
 }
