@@ -7,9 +7,7 @@ import { MonitorService } from "./monitor.service";
   styleUrls: ["./monitor.component.scss"],
 })
 export class MonitorComponent implements OnInit {
-  constructor(private monitorService: MonitorService) {}
+  constructor() {}
 
-  ngOnInit(): void {
-    this.monitorService.getLegendFromApi().subscribe();
-  }
+  ngOnInit(): void {}
 }
