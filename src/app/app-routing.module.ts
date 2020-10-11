@@ -1,11 +1,17 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
 
-
-const routes: Routes = [{ path: 'monitor', loadChildren: () => import('./monitor/monitor.module').then(m => m.MonitorModule) }];
+const routes: Routes = [
+  {
+    path: "monitor",
+    loadChildren: () =>
+      import("./monitor/monitor.module").then((m) => m.MonitorModule),
+  },
+  { path: "", redirectTo: "monitor", pathMatch: "full" },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
